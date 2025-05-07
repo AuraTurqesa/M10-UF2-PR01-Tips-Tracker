@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Graph View -->
+    <record id="view_tip_tracker_graph" model="ir.ui.view">
+        <field name="name">tip.tracker.graph</field>
+        <field name="model">tip.tracker</field>
+        <field name="type">graph</field>
+        <field name="arch" type="xml">
+            <graph string="Estadísticas de Propinas">
+                <field name="employee_id"/>
+                <field name="amount" type="measure"/>
+                <field name="date" type="row"/>
+                <field name="shift_type" type="col"/>
+                <field name="service_type" type="col"/>
+                <field name="payment_method" type="col"/>
+            </graph>
+        </field>
+    </record>
+
+    <!-- Pivot View -->
+    <record id="view_tip_tracker_pivot" model="ir.ui.view">
+        <field name="name">tip.tracker.pivot</field>
+        <field name="model">tip.tracker</field>
+        <field name="type">pivot</field>
+        <field name="arch" type="xml">
+            <pivot string="Análisis de Propinas">
+                <field name="employee_id" type="row"/>
+                <field name="date" type="col"/>
+                <field name="amount" type="measure"/>
+                <field name="tip_percentage" type="measure"/>
+                <field name="shift_type" type="col"/>
+                <field name="service_type" type="col"/>
+                <field name="payment_method" type="col"/>
+            </pivot>
+        </field>
+    </record>
+
+    <!-- Update Action to include new views -->
+    <record id="action_tip_tracker" model="ir.actions.act_window">
+        <field name="view_mode">list,form,graph,pivot</field>
+    </record>
+</odoo> 
