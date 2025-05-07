@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_tip_tracker_root"
+              name="Propinas"
+              sequence="10"/>
+
+    <menuitem id="menu_tip_tracker"
+              name="Gestión de Propinas"
+              parent="menu_tip_tracker_root"
+              action="action_tip_tracker"
+              sequence="10"/>
+</odoo> 
